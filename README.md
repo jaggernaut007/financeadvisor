@@ -30,10 +30,15 @@ A conversational financial QA system with vector search, built using LlamaIndex 
 
 3. Create a `.env` file in your project root with the following content (see `env_example` for reference):
    ```env
-   OPENAI_API_KEY=your_api_key
-   LLM_MODEL=gpt-4o
-   LLM_TEMPERATURE=0.0
-   # (Optional) SYSTEM_PROMPT=your prompt text here
+  OPENAI_API_KEY=your_openai_api_key_here
+  LLM_MODEL=gpt-4o
+  LLM_TEMPERATURE=0.0
+  TOKENIZERS_PARALLELISM = "false"
+  OPENAI_API_BASE = "https://api.openai.com/v1"
+  PROMPT_ID = Your_prompt_ID_here
+  PROMPT_VERSION = "1"
+  LLM_MODEL = "gpt-4o"
+  LLM_TEMPERATURE = "0.0"
    ```
 
 
