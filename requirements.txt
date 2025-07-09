@@ -1,0 +1,8 @@
+typer
+rich
+llama-index
+openai
+urllib3
+requests
+transformers
+torch
