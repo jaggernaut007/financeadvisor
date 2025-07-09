@@ -59,7 +59,7 @@ def load_data(file_path):
     embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 
     # Create a persistent vector store
-    persist_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'storage')
+    persist_dir = os.path.join(os.path.dirname(__file__), '..', 'vectors', 'storage')
 
     # Create a storage context with the vector store and persist directory
     vector_store = SimpleVectorStore(persist_dir=persist_dir)
@@ -89,7 +89,7 @@ def load_data_OA(file_path):
 
     # Construct the path to the storage directory
     current_dir = os.path.dirname(__file__)
-    persist_dir = os.path.join(current_dir, 'data', 'storage-openai')
+    persist_dir = os.path.join(current_dir, 'vectors', 'storage-openai')
 
     # Create a storage context with the vector store and persist directory
     vector_store = SimpleVectorStore(persist_dir=persist_dir)

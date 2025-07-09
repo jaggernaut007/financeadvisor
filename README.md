@@ -28,15 +28,18 @@ A conversational financial QA system with vector search, built using LlamaIndex 
    pip install -r requirements.txt
    ```
 
-3. Set your OpenAI API key:
-   ```bash
-   export OPENAI_API_KEY=your_api_key
+3. Create a `.env` file in your project root with the following content (see `env_example` for reference):
+   ```env
+   OPENAI_API_KEY=your_api_key
+   LLM_MODEL=gpt-4o
+   LLM_TEMPERATURE=0.0
+   # (Optional) SYSTEM_PROMPT=your prompt text here
    ```
 
-4. (Optional) If you want to use a custom prompt template, set it as an environment variable:
-   ```bash
-   export SYSTEM_PROMPT="your prompt text here"
-   ```
+
+**Note:**
+- The `.env` file is used to securely store your API keys and configuration. Do not commit your real `.env` file to version control.
+- An example file `env_example` is provided for reference. Copy it to `.env` and fill in your details.
 ---
 
 ## How to Run
@@ -87,4 +90,3 @@ This will embed the dataset found in the `data/` folder into the respective stor
 ## Quick Reference
 - **Build index:** `python dataLoader.py`
 - **Query index:** `python qaEngine.py`
-- **(OpenAI) Set API key:** `export OPENAI_API_KEY=your_api_key`

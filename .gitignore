@@ -16,6 +16,6 @@ __pycache__/
 
 .*cache
 
-/data
+/vectors
 
 uv.lock

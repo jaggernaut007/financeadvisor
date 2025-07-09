@@ -57,16 +57,6 @@ def create_chat_engine(doc_id, llm=None, token_limit=1500, system_prompt=None, e
     else:
         prefix_messages = []
     # Create a chat engine with memory support
-
-    # from openai import OpenAI
-    # client = OpenAI()
-
-    # response = client.responses.create(
-    # prompt={
-    #     "id": "pmpt_686e481fb03881978df9352623241cc00da5d10a2189ec2d",
-    #     "version": "1"
-    # }
-    # )
     chat_engine = ContextChatEngine(
         retriever=retriever,
         llm=llm,
@@ -88,7 +78,7 @@ def load_index():
     
     # Load the vector store from disk
     # Use path relative to src/ directory, works if run from project root or src/
-    storage_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'storage')
+    storage_dir = os.path.join(os.path.dirname(__file__), '..', 'vectors', 'storage')
 
     # Load the vector store from disk
     vector_store = SimpleVectorStore.from_persist_dir(storage_dir)
@@ -115,7 +105,7 @@ def load_index_OA():
     # Get the parent directory of the current file (i.e., the project root)
     project_root = os.path.dirname(current_dir)
     # Construct the path to the storage directory
-    persist_dir = os.path.join(project_root, 'data', 'storage-openai')
+    persist_dir = os.path.join(project_root, 'vectors', 'storage-openai')
 
     # Load the vector store from disk
     vector_store = SimpleVectorStore.from_persist_dir(persist_dir)
